@@ -1,0 +1,5 @@
+ticker,num_comments,comment_sentiment_average,latest_comment_date,score,upvote_ratio,date,domain,num_crossposts,author,timestamp,commentdate
+GME,394,0.07777777777777778,1636383668.0,2218,0.93,1635977861.0,self.wallstreetbets,0,asmit10,2021-11-03 17:17:41,2021-11-08 09:01:08
+AMC,201,0.125,1636733718.0,818,0.88,1635786572.0,self.wallstreetbets,0,Thump4,2021-11-01 12:09:32,2021-11-12 10:15:18
+GME,246,0.2903225806451613,1636767137.0,951,0.95,1636636187.0,self.wallstreetbets,2,Stockgrid,2021-11-11 07:09:47,2021-11-12 19:32:17
+AMC,98,0.0625,1636841258.0,83,0.65,1636814751.0,self.wallstreetbets,0,Winter-Divide-8049,2021-11-13 08:45:51,2021-11-13 16:07:38
