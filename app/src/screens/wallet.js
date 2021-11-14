@@ -55,6 +55,49 @@ export default function Wallet() {
     </View>
     );
 
+    const _getWallet = () => {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+        "action": "getwallet",
+        "userid": "1"
+        });
+
+        var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+        };
+
+        fetch("https://us-central1-aiot-fit-xlab.cloudfunctions.net/flyfair", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+    }
+
+    const _getTx = () => {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+        "action": "gettips"
+        });
+
+        var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+        };
+
+        fetch("https://us-central1-aiot-fit-xlab.cloudfunctions.net/flyfair", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+    }
+
     const [bidsData, setBidsData] = useState({'bids':[{'id':0,'amount':'300','fligt':'2230','txid':'324345342342342342','type':'tip'},
     {'id':1,'amount':'300','fligt':'2230','txid':'324345342342342342','type':'tip'},
     {'id':2,'amount':'300','fligt':'2230','txid':'324345342342342342','type':'tip'},

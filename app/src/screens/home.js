@@ -21,6 +21,31 @@ export default function Home() {
         R: require('../assets/r.ttf')
 
       });
+
+      const _addTip = () => {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        
+        var raw = JSON.stringify({
+          "action": "addtip",
+          "paxid": "1",
+          "flightid": "1",
+          "amount": "100",
+          "currency": "USD"
+        });
+        
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+        
+        fetch("https://us-central1-aiot-fit-xlab.cloudfunctions.net/flyfair", requestOptions)
+          .then(response => response.text())
+          .then(result => console.log(result))
+          .catch(error => console.log('error', error));
+      }
     const renderContent = () => (
     <View
         style={{
@@ -106,7 +131,7 @@ export default function Home() {
 
                     <View style={{marginVertical:'5%', paddingHorizontal:'10%'}}>
                         <Text style={{fontFamily:'B', color:theme.blue}}>Leave a Tip</Text>
-                        <Text style={{fontFamily:'R', color:theme.blue}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt</Text>
+                        <Text style={{fontFamily:'R', color:theme.blue}}>Please leave a generous tip for the crew helping you get home this holiday</Text>
                         <View style={{flexDirection:'row', marginTop:'10%'}}>
                             <Text  style={{borderBottomColor:theme.blue, borderBottomWidth:1, fontFamily:'R', fontSize:35, color:theme.blue}}>$</Text>
                             <TextInput style={{borderBottomColor:theme.blue, borderBottomWidth:1, fontFamily:'R', fontSize:35}} placeholder="0.00"></TextInput>

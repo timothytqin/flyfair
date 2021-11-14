@@ -99,8 +99,8 @@ export default function Ride() {
                     </View>
                     <View style={{borderBottomColor:theme.blue, borderBottomWidth:0.5, width:'80%', alignSelf:'center'}}></View>
                     <View style={{marginTop:'.5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
-                        <Text style={{fontFamily:'B', color:theme.blue}}>11:30 AM</Text>
-                        <Text style={{fontFamily:'B', color:theme.blue}}>1:00 PM</Text>
+                        <Text style={{fontFamily:'B', color:theme.blue}}>10:30 AM</Text>
+                        <Text style={{fontFamily:'B', color:theme.blue}}>11:50 AM</Text>
                     </View>
                     <View style={{borderBottomColor:theme.blue, borderBottomWidth:1, width:'80%', alignSelf:'center', marginTop:'5%'}}></View>
                     <View style={{marginTop:'.5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>

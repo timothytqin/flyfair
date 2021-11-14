@@ -21,6 +21,31 @@ export default function Bids() {
         R: require('../assets/r.ttf')
 
       });
+
+    const _getBids = () => {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+        "action": "getbids"
+        });
+
+        var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+        };
+
+        fetch("https://us-central1-aiot-fit-xlab.cloudfunctions.net/flyfair", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(JSON.parse(JSON.parse(result).data)))
+        .catch(error => console.log('error', error));
+    }
+
+    useEffect(() => {
+        _getBids();
+      });
     const renderContent = () => (
     <View
         style={{
@@ -55,12 +80,12 @@ export default function Bids() {
     </View>
     );
 
-    const [bidsData, setBidsData] = useState({'bids':[{'id':0,'origin':'DCA','dest':'MCO','aircraft':'Boeing 737-800','depart':'10:20 AM','duration':'2.5'},
-    {'id':1,'origin':'DCA','dest':'MCO','aircraft':'Boeing 737-800','depart':'10:20 AM','duration':'2.5'},
-    {'id':2,'origin':'DCA','dest':'MCO','aircraft':'Boeing 737-800','depart':'10:20 AM','duration':'2.5'},
-    {'id':3,'origin':'DCA','dest':'MCO','aircraft':'Boeing 737-800','depart':'10:20 AM','duration':'2.5'},
-    {'id':4,'origin':'DCA','dest':'MCO','aircraft':'Boeing 737-800','depart':'10:20 AM','duration':'2.5'},
-    {'id':5,'origin':'DCA','dest':'MCO','aircraft':'Boeing 737-800','depart':'10:20 AM','duration':'2.5'},]})
+    const [bidsData, setBidsData] = useState({'bids':[{'_id':0,'origin':'DCA','dest':'MCO','aircraft':'Boeing 737-800','depart':'10:20 AM','duration':'2.5'},
+    {'_id':1,'origin':'IAD','dest':'MCO','aircraft':'Boeing 737-800','depart':'10:20 AM','duration':'2.5'},
+    {'_id':2,'origin':'DCA','dest':'DFW','aircraft':'Boeing 737-800','depart':'11:20 AM','duration':'3.5'},
+    {'_id':3,'origin':'IAD','dest':'MCO','aircraft':'Boeing 737-800','depart':'9:30 AM','duration':'2.5'},
+    {'_id':4,'origin':'BWI','dest':'DFW','aircraft':'Boeing 737-800','depart':'8:50 AM','duration':'3.5'},
+    {'_id':5,'origin':'IAD','dest':'EWR','aircraft':'Boeing 737-800','depart':'10:00 AM','duration':'1.5'},]})
 
     const sheetRef = React.useRef(null);
 

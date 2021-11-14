@@ -55,11 +55,11 @@ export default function Rides() {
     </View>
     );
 
-    const [bidsData, setBidsData] = useState({'bids':[{'id':0,'vehicle':'Hundai Sonata','capacity':'4','depart':'10:20 AM','eta':'11:20 AM'},
-    {'id':2,'vehicle':'Hundai Sonata','capacity':'4','depart':'10:20 AM','eta':'11:20 AM'},
-    {'id':3,'vehicle':'Hundai Sonata','capacity':'4','depart':'10:20 AM','eta':'11:20 AM'},
-    {'id':4,'vehicle':'Hundai Sonata','capacity':'4','depart':'10:20 AM','eta':'11:20 AM'},
-    {'id':5,'vehicle':'Hundai Sonata','capacity':'4','depart':'10:20 AM','eta':'11:20 AM'},]})
+    const [bidsData, setBidsData] = useState({'bids':[{'id':0,'vehicle':'Hyundai Sonata','capacity':'4','depart':'10:20 AM','eta':'11:20 AM'},
+    {'id':2,'vehicle':'GMC Yukon XL','capacity':'4','depart':'10:30 AM','eta':'11:50 AM'},
+    {'id':3,'vehicle':'Toyota Camry','capacity':'4','depart':'11:20 AM','eta':'12:20 AM'},
+    {'id':4,'vehicle':'Chevrolet Tahoe','capacity':'4','depart':'10:50 AM','eta':'11:10 AM'},
+    {'id':5,'vehicle':'Honda Accord','capacity':'4','depart':'10:30 AM','eta':'12:20 PM'},]})
 
     const sheetRef = React.useRef(null);
 

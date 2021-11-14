@@ -21,6 +21,33 @@ export default function Bid() {
         R: require('../assets/r.ttf')
 
       });
+      const [amount, setAmount] = useState('0');
+      const [status, setStatus] = useState(false);
+
+      const _placeBid = (amount) => {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        
+        var raw = JSON.stringify({
+          "action": "placebid",
+          "flightid": "0",
+          "userid": "1",
+          "amount": amount,
+          "usertype": "crew"
+        });
+        
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+        
+        fetch("https://us-central1-aiot-fit-xlab.cloudfunctions.net/flyfair", requestOptions)
+          .then(response => response.text())
+          .then(result => {console.log(JSON.parse(result).status); if(JSON.parse(result).status=='successfully added'){setStatus(true)}})
+          .catch(error => console.log('error', error));
+      }
     const renderContent = () => (
     <View
         style={{
@@ -90,8 +117,8 @@ export default function Bid() {
                     </View>
                     <View style={{borderBottomColor:theme.blue, borderBottomWidth:0.5, width:'80%', alignSelf:'center'}}></View>
                     <View style={{marginTop:'.5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
-                        <Text style={{fontFamily:'B', color:theme.blue}}>11:30 AM</Text>
-                        <Text style={{fontFamily:'B', color:theme.blue}}>1:00 PM</Text>
+                        <Text style={{fontFamily:'B', color:theme.blue}}>11:20 AM</Text>
+                        <Text style={{fontFamily:'B', color:theme.blue}}>02:50 PM</Text>
                     </View>
                     <View style={{borderBottomColor:theme.blue, borderBottomWidth:1, width:'80%', alignSelf:'center', marginTop:'5%'}}></View>
                     <View style={{marginTop:'.5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
@@ -106,13 +133,14 @@ export default function Bid() {
 
                     <View style={{marginVertical:'5%', paddingHorizontal:'10%'}}>
                         <Text style={{fontFamily:'B', color:theme.blue}}>Place your bid</Text>
-                        <Text style={{fontFamily:'R', color:theme.blue}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt</Text>
+                        <Text style={{fontFamily:'R', color:theme.blue}}>Lowest bid gets the flight</Text>
                         <View style={{flexDirection:'row', marginTop:'10%'}}>
                             <Text  style={{borderBottomColor:theme.blue, borderBottomWidth:1, fontFamily:'R', fontSize:35, color:theme.blue}}>$</Text>
-                            <TextInput style={{borderBottomColor:theme.blue, borderBottomWidth:1, fontFamily:'R', fontSize:35}} placeholder="0.00"></TextInput>
+                            <TextInput value={amount} onChangeText={(e)=>setAmount(e)} style={{borderBottomColor:theme.blue, borderBottomWidth:1, fontFamily:'R', fontSize:35}} placeholder="0.00"></TextInput>
+                            {status &&<Icon name="checkcircle" type="antdesign" color={theme.blue}></Icon>}
                         </View>
                     </View>
-                    <TouchableOpacity><View style={{backgroundColor:theme.blue, padding:'4%', borderBottomEndRadius:7, borderBottomLeftRadius:7, marginTop:'11%', width:'100%'}}>
+                    <TouchableOpacity onPress={()=>_placeBid(amount)}><View style={{backgroundColor:theme.blue, padding:'4%', borderBottomEndRadius:7, borderBottomLeftRadius:7, marginTop:'15.25%', width:'100%'}}>
                         <Text style={{fontFamily:'B', textAlign:'center', color:theme.white}}>Place bid</Text>
                     </View></TouchableOpacity>
                 </View>

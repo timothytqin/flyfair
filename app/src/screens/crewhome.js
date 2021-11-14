@@ -276,9 +276,9 @@ export default function Crewhome() {
               }}
             >
               <Text style={{ fontFamily: "R", color: theme.blue }}>
-                Passenger
+                Depart at
               </Text>
-              <Text style={{ fontFamily: "R", color: theme.blue }}>Seats</Text>
+              <Text style={{ fontFamily: "R", color: theme.blue }}>Arrive By</Text>
             </View>
             <View
               style={{
@@ -297,9 +297,9 @@ export default function Crewhome() {
               }}
             >
               <Text style={{ fontFamily: "B", color: theme.blue }}>
-                John Doe
+                11:20
               </Text>
-              <Text style={{ fontFamily: "B", color: theme.blue }}>1A</Text>
+              <Text style={{ fontFamily: "B", color: theme.blue }}>13:40</Text>
             </View>
             <View
               style={{
