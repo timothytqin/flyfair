@@ -5,6 +5,7 @@ import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer as SIA
 import praw
 import pandas as pd
+import json
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -86,6 +87,26 @@ def getRedditSentiment():
     print(results)
     return {'result': results}
 
+data = {}
+for ticker in ['GS', 'IBM', 'W', 'COF', 'GOOGL', 'AAPL', 'AMZN', 'TSLA', 'AAL', 'NFLX']:
+    results = []
+    for submission in reddit.subreddit('wallstreetbets').search(ticker, limit=10):
+        if submission.domain != "self.wallstreetbets":
+            continue
+        d = {}
+        d['num_comments'] = submission.num_comments
+        d['comment_sentiment_average'] = commentSentiment(submission.url)
+        if d['comment_sentiment_average'] == 0.000000:
+            continue
+        d['date'] = submission.created_utc
+        d['link'] = submission.url
+        print(d['link'])
+        d['title'] = submission.title
+        results.append(d)
+    data[ticker] = results
+
+with open('data.json', 'w') as outfile:
+    json.dump(data, outfile)
 
 
 

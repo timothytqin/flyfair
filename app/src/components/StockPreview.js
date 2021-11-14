@@ -3,6 +3,7 @@ import { View, Dimensions, StyleSheet } from "react-native";
 import { Text } from "react-native-elements";
 import { SlideAreaChart } from "react-native-slide-charts";
 import { LinearGradient, Stop } from "react-native-svg";
+import { BlurView } from "expo-blur";
 
 const StockPreview = ({ ticker, data, price, change, range, style }) => {
   const color = change > 0 ? "#66CD00" : "#FF3232";
@@ -34,6 +35,7 @@ const StockPreview = ({ ticker, data, price, change, range, style }) => {
           verticalLineWidth: 0,
         }}
         cursorProps={{ displayCursor: false }}
+        style={{ backgroundColor: "transparent" }}
       />
     </View>
   );
@@ -41,8 +43,8 @@ const StockPreview = ({ ticker, data, price, change, range, style }) => {
 
 const styles = StyleSheet.create({
   bg: {
-    backgroundColor: "#fff",
-    borderRadius: 20,
+    backgroundColor: "#fffc",
+    borderRadius: 10,
     marginTop: 30,
     padding: 30,
     flexDirection: "row",
