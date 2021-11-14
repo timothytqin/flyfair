@@ -4,7 +4,7 @@ import HorizontalBar from "./HorizontalBar";
 import Panel from "./Panel";
 import Text from "./Text";
 
-export default function FlightDetails({ data }) {
+export default function FlightDetails({ data, bids }) {
   const styles = {
     container: {
       marginLeft: "1em",
@@ -52,15 +52,7 @@ export default function FlightDetails({ data }) {
     },
   };
 
-  const { departure, arrival, from, to, type, flight } = {
-    departure: "12:30 AM",
-    arrival: "2:20 AM",
-    from: "DCA",
-    to: "DFW",
-    type: "Boeing 747-800",
-    flight: "AA 2010",
-  };
-  const bids = [{ name: "John Doe", price: "300" }];
+  const { departure, arrival, origin, destination, equipment } = data;
   return (
     <Panel style={styles.container}>
       <div style={styles.header}>
@@ -70,13 +62,17 @@ export default function FlightDetails({ data }) {
       <div style={styles.body}>
         <div style={styles.direction}>
           <div style={{ flex: 1, textAlign: "end" }}>
-            <Text style={styles.directionText}>{`${from}`}</Text>
+            <Text
+              style={styles.directionText}
+            >{`${origin.toUpperCase()}`}</Text>
           </div>
           <div style={{ flex: 1, textAlign: "center" }}>
             <Text style={styles.directionText}>{`-->`}</Text>
           </div>
           <div style={{ flex: 1 }}>
-            <Text style={styles.directionText}>{`${to}`}</Text>
+            <Text
+              style={styles.directionText}
+            >{`${destination.toUpperCase()}`}</Text>
           </div>
         </div>
         <div style={styles.section}>
@@ -97,8 +93,10 @@ export default function FlightDetails({ data }) {
           </div>
           <HorizontalBar />
           <div style={styles.row}>
-            <Text style={styles.value}>{`${type}`}</Text>
-            <Text style={styles.value}>{`${flight}`}</Text>
+            <Text style={styles.value}>{`${equipment}`}</Text>
+            <Text style={styles.value}>{`AA ${
+              Math.round(Math.random() * 100000) + 1000
+            }`}</Text>
           </div>
         </div>
         <div style={styles.section}>
@@ -106,7 +104,7 @@ export default function FlightDetails({ data }) {
             <Text style={styles.value}>Bid History</Text>
             <Text style={styles.label}>Pilot | Crew</Text>
           </div>
-          {[...bids, ...bids, ...bids, ...bids].map((bid, index) => (
+          {bids.map((bid, index) => (
             <BidItem data={{ ...bid, index }} />
           ))}
         </div>

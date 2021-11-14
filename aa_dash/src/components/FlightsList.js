@@ -4,7 +4,7 @@ import HorizontalBar from "./HorizontalBar";
 import Panel from "./Panel";
 import Text from "./Text";
 
-export default function FlightList() {
+export default function FlightList({ data, bids }) {
   const styles = {
     container: {
       marginRight: "1em",
@@ -20,29 +20,7 @@ export default function FlightList() {
     },
   };
 
-  const flights = [
-    {
-      from: "AUS",
-      to: "JFK",
-      type: "Airbus 320",
-      price: "300",
-      time: 4,
-    },
-    {
-      from: "AUS",
-      to: "JFK",
-      type: "Airbus 320",
-      price: "300",
-      time: 4,
-    },
-    {
-      from: "AUS",
-      to: "JFK",
-      type: "Airbus 320",
-      price: "300",
-      time: 4,
-    },
-  ];
+  const flights = [...data];
 
   return (
     <Panel style={styles.container}>
@@ -52,8 +30,8 @@ export default function FlightList() {
       </div>
       <HorizontalBar />
       <div style={styles.body}>
-        {[...flights, ...flights, ...flights, ...flights].map((flight) => (
-          <FlightItem data={flight} />
+        {flights.map((flight) => (
+          <FlightItem data={flight} bids={bids} />
         ))}
       </div>
     </Panel>

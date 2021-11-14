@@ -1,4 +1,8 @@
+import React, { useEffect, useState } from "react";
 import bg from "./assets/bg-web.png";
+
+import flights from "./data/flights.json";
+import bids from "./data/bids.json";
 
 import AddFlight from "./components/AddFlight";
 import FlightList from "./components/FlightsList";
@@ -23,6 +27,8 @@ function App() {
     },
   };
 
+  const [show, setShow] = useState(false);
+
   return (
     <div
       className="App"
@@ -34,11 +40,16 @@ function App() {
       }}
     >
       <div style={styles.container}>
-        <Header />
+        <Header show={show} setShow={setShow} />
         <div style={{ display: "flex", flex: 1 }}>
-          <FlightList />
-          {/* <FlightDetails /> */}
-          <AddFlight />
+          <FlightList data={flights.data} bids={bids.data} />
+          {show ? (
+            <AddFlight />
+          ) : (
+            <FlightDetails data={flights.data[0]} bids={bids.data} />
+          )}
+
+          {/* <AddFlight /> */}
         </div>
       </div>
     </div>
