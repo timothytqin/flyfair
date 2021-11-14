@@ -22,7 +22,7 @@ function MyStack() {
     <Stack.Navigator>
       <Stack.Screen
         name="Login" 
-        component={Login} 
+        component={Stock} 
         options={{ headerShown: false}} 
       />
       <Stack.Screen

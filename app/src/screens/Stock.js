@@ -96,7 +96,7 @@ const Stock = () => {
       />
       <BottomSheet
         ref={sheetRef}
-        snapPoints={[750, 400, 0]}
+        snapPoints={[550, 400, 0]}
         borderRadius={20}
         renderContent={() => renderContent({ stockSelected })}
         initialSnap={2}

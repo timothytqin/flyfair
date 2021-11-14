@@ -1,5 +1,5 @@
 [
-  { "id": 0, "ticker": "UAL", "name": "United Airlines" },
+  { "id": 0, "ticker": "GS", "name": "Goldman Sachs" },
   { "id": 1, "ticker": "IBM", "name": "IBM" },
   { "id": 2, "ticker": "W", "name": "Wayfair" },
   { "id": 3, "ticker": "COF", "name": "Capital One" },
