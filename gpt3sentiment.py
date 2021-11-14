@@ -1,0 +1,30 @@
+import os
+import openai
+openai.api_key = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+
+# response = openai.Completion.create(
+# engine="davinci",
+# prompt="This is a Sentence sentiment classifier\n\n\nSentence: \"I loved the new Batman movie!\"\nSentiment: Positive\n###\nSentence: \"I hate it when my phone battery dies.\"\nSentiment: Negative\n###\nSentence: \"My day has been 👍\"\nSentiment: Positive\n###\nSentence: \"This is the link to the article\"\nSentiment: Neutral\n###\nSentence: \"This new music video blew my mind\"\nSentiment:",
+# temperature=0.3,
+# max_tokens=60,
+# top_p=1.0,
+# frequency_penalty=0.5,
+# presence_penalty=0.0,
+# stop=["###"])
+# print (response)
+
+def getsentiment(text, temp) :
+
+    response = openai.Completion.create(
+    engine="davinci",
+    prompt=text,
+    temperature=temp,
+    max_tokens=60,
+    top_p=1.0,
+    frequency_penalty=0.5,
+    presence_penalty=0.0,
+    stop=["###"])
+    print (response)
+
+    return response
