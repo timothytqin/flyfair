@@ -4,6 +4,7 @@ import { Text, AppRegistry } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Login from './src/screens/login';
+import Stock from './src/screens/Stock';
 import Home from './src/screens/home';
 import Bids from './src/screens/bids';
 import Crewlogin from './src/screens/crewlogin';
@@ -78,8 +79,6 @@ function MyStack() {
         component={Insurance} 
         options={{ headerShown: false}} 
       />
-      
-  
       
     </Stack.Navigator>
   );
