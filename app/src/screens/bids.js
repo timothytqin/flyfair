@@ -45,7 +45,7 @@ export default function Bids() {
                     </View>
                     <Text style={{fontFamily:'R', color:theme.blue, textAlign:'center'}}>Bids</Text>
                     </View></TouchableOpacity>
-                    <TouchableOpacity><View>
+                    <TouchableOpacity onPress={()=>navigation.navigate('Wallet')}><View>
                     <View style={{backgroundColor:theme.grey, opacity:0.75, borderRadius:50, height:50, width:50, alignSelf:'center'}}>
                         <Icon name="wallet" type="entypo" color={theme.blue} style={{marginTop:'20%', alignSelf:'center'}}></Icon>
                     </View>

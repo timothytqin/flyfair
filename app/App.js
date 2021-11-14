@@ -9,6 +9,7 @@ import Bids from './src/screens/bids';
 import Crewlogin from './src/screens/crewlogin';
 import Crewhome from './src/screens/crewhome';
 import Bid from './src/screens/bid';
+import Wallet from './src/screens/wallet';
 
 
 
@@ -46,6 +47,11 @@ function MyStack() {
       <Stack.Screen
         name="Bid" 
         component={Bid} 
+        options={{ headerShown: false}} 
+      />
+      <Stack.Screen
+        name="Wallet" 
+        component={Wallet} 
         options={{ headerShown: false}} 
       />
       
