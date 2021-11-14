@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, Image, Button, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Svg, { Line, Circle } from 'react-native-svg';
-import { Icon, ThemeConsumer } from 'react-native-elements'
+import { Icon, CheckBox } from 'react-native-elements'
 import { useFonts } from 'expo-font';
 import {theme} from '../theme.js';
 import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
@@ -13,8 +13,9 @@ import BottomSheet from 'reanimated-bottom-sheet';
 
 
 
-export default function Home() {
+export default function Insurance() {
     const navigation = useNavigation();
+    const [checked, setChecked] = useState(false);
     const [fontLoaded] = useFonts({
         B: require('../assets//b.ttf'),
         M: require('../assets/m.ttf'),
@@ -45,7 +46,7 @@ export default function Home() {
                     </View>
                     <Text style={{fontFamily:'R', color:theme.blue, textAlign:'center'}}>Find Trip</Text>
                     </View></TouchableOpacity>
-                    <TouchableOpacity onPress={()=>navigation.navigate('Insurance')}><View>
+                    <TouchableOpacity><View>
                     <View style={{backgroundColor:theme.grey, opacity:0.75, borderRadius:50, height:50, width:50, alignSelf:'center'}}>
                         <Icon name="arrowright" type="antdesign" color={theme.blue} style={{marginTop:'20%', alignSelf:'center'}}></Icon>
                     </View>
@@ -77,21 +78,29 @@ export default function Home() {
                     <Icon name="chevron-right" type="entypo" style={{marginTop:'50%'}} color="white"></Icon>
                 </View>
                 <View style={{marginTop:'10%'}}></View>
-                <View style={{width:'80%', height:'52.25%', backgroundColor:theme.white, opacity:0.75, borderRadius:7, alignSelf:'center', paddingTop:'5%'}}>
-                    <Text  style={{fontFamily:'R', color:theme.blue, fontSize:24, marginLeft:'5%'}}>Ongoing Flight</Text>
+                <View style={{width:'80%', height:'61%', backgroundColor:theme.white, opacity:0.75, borderRadius:7, alignSelf:'center', paddingTop:'5%'}}>
+                    <Text  style={{fontFamily:'R', color:theme.blue, fontSize:24, marginLeft:'5%'}}>Continue Booking</Text>
                     <View style={{flexDirection:'row', justifyContent:'center', marginTop:'5%'}}>
                         <Text style={{fontFamily:'R', color:theme.blue, fontSize:30, marginHorizontal:'5%'}}>DCA</Text>
                         <Icon name="arrowright" type="antdesign" color={theme.blue} size={30}></Icon>
                         <Text style={{fontFamily:'R', color:theme.blue, fontSize:30, marginLeft:'5%'}}>DFW</Text>
                     </View>
+                    <Text style={{fontFamily:'R', color:theme.black, textAlign:'center'}}>{Date(13348588).split('00')[0].toLocaleUpperCase()}</Text>
                     <View style={{marginTop:'5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
                         <Text style={{fontFamily:'R', color:theme.blue}}>Passenger</Text>
-                        <Text style={{fontFamily:'R', color:theme.blue}}>Seats</Text>
                     </View>
                     <View style={{borderBottomColor:theme.blue, borderBottomWidth:0.5, width:'80%', alignSelf:'center'}}></View>
                     <View style={{marginTop:'.5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
                         <Text style={{fontFamily:'B', color:theme.blue}}>John Doe</Text>
-                        <Text style={{fontFamily:'B', color:theme.blue}}>1A</Text>
+                    </View>
+                    <View style={{marginTop:'5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
+                        <Text style={{fontFamily:'R', color:theme.blue}}>Flight No.</Text>
+                        <Text style={{fontFamily:'R', color:theme.blue}}>Departure</Text>
+                    </View>
+                    <View style={{borderBottomColor:theme.blue, borderBottomWidth:0.5, width:'80%', alignSelf:'center'}}></View>
+                    <View style={{marginTop:'.5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
+                        <Text style={{fontFamily:'B', color:theme.blue}}>AA 0012</Text>
+                        <Text style={{fontFamily:'B', color:theme.blue}}>10:20 AM</Text>
                     </View>
                     <View style={{borderBottomColor:theme.blue, borderBottomWidth:1, width:'80%', alignSelf:'center', marginTop:'5%'}}></View>
                     <View style={{marginTop:'.5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
@@ -105,14 +114,22 @@ export default function Home() {
 
 
                     <View style={{marginVertical:'5%', paddingHorizontal:'10%'}}>
-                        <Text style={{fontFamily:'B', color:theme.blue}}>Leave a Tip</Text>
+                        <Text style={{fontFamily:'B', color:theme.blue}}>Travel Insurance</Text>
                         <Text style={{fontFamily:'R', color:theme.blue}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt</Text>
                         <View style={{flexDirection:'row', marginTop:'10%'}}>
-                            <Text  style={{borderBottomColor:theme.blue, borderBottomWidth:1, fontFamily:'R', fontSize:35, color:theme.blue}}>$</Text>
-                            <TextInput style={{borderBottomColor:theme.blue, borderBottomWidth:1, fontFamily:'R', fontSize:35}} placeholder="0.00"></TextInput>
+                            <Text  style={{borderBottomColor:theme.blue, borderBottomWidth:1, fontFamily:'R', fontSize:35, color:theme.blue}}>$104</Text>
+                            <CheckBox
+                            title='Add travel insurance'
+                            checked={checked}
+                            onPress={()=>setChecked(!checked)}
+                            textStyle={{fontFamily:'R', color:theme.blue}}
+                            containerStyle={{backgroundColor:'transparent', borderWidth:0}}
+                            />
                         </View>
+                        
+                        <Text style={{fontFamily:'R', color:theme.blue, marginTop:'5%'}}></Text>
                     </View>
-                    <TouchableOpacity><View style={{backgroundColor:theme.blue, padding:'4%', borderBottomEndRadius:7, borderBottomLeftRadius:7, marginTop:'11%', width:'100%'}}>
+                    <TouchableOpacity><View style={{backgroundColor:theme.blue, padding:'4%', borderBottomEndRadius:7, borderBottomLeftRadius:7, marginTop:'1%', width:'100%'}}>
                         <Text style={{fontFamily:'B', textAlign:'center', color:theme.white}}>Confirm</Text>
                     </View></TouchableOpacity>
                 </View>
