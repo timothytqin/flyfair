@@ -26,9 +26,10 @@ const StockDetail = ({ ticker, data, price, change, range, name }) => {
   const renderPost = ({ item }) => {
     return <Reddit {...item} />;
   };
-  return (
-    <BlurView style={styles.bg} intensity={100}>
-      <ScrollView style={{ paddingHorizontal: 30 }}>
+
+  const getHeader = () => {
+    return (
+      <>
         <View>
           <Text style={styles.name}>{name}</Text>
           <View style={styles.subtitle}>
@@ -82,7 +83,7 @@ const StockDetail = ({ ticker, data, price, change, range, name }) => {
               },
             ],
           }}
-          style={{ marginBottom: 40 }}
+          style={{ marginBottom: 40, backgroundColor: "transparent" }}
         />
         <View style={styles.row}>
           <Text style={styles.ticker}>Change</Text>
@@ -92,17 +93,24 @@ const StockDetail = ({ ticker, data, price, change, range, name }) => {
           <Text style={styles.ticker}>High</Text>
           <Text style={styles.stat}>${range[1].toFixed(2)}</Text>
         </View>
-        <View style={styles.row}>
+        <View style={{ ...styles.row, marginBottom: 20 }}>
           <Text style={styles.ticker}>Low</Text>
           <Text style={styles.stat}>${range[0].toFixed(2)}</Text>
         </View>
+      </>
+    );
+  };
+  return (
+    <BlurView style={styles.bg} intensity={100}>
+      <View>
         <FlatList
           data={posts}
           renderItem={renderPost}
           keyExtractor={(item) => item.title}
-          style={{ marginTop: 30 }}
+          style={{ marginTop: 10, paddingHorizontal: 30 }}
+          ListHeaderComponent={getHeader}
         />
-      </ScrollView>
+      </View>
     </BlurView>
   );
 };
