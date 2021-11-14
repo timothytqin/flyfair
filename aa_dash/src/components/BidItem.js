@@ -21,18 +21,20 @@ export default function BidItem({ data }) {
     },
   };
 
-  const { index, name, price } = data;
+  const { index, _id, amount, usertype } = data;
   return (
     <div style={styles.container}>
       <div style={styles.index}>
         <Text style={styles.text}>{`${index + 1}.`}</Text>
       </div>
       <div style={{ flex: 1 }}>
-        <Text style={styles.text}>{` ${name}`}</Text>
+        <Text style={styles.text}>{`${
+          usertype == "crew" ? "Crew" : "Pilot"
+        } ${_id["$oid"].toUpperCase()}`}</Text>
       </div>
       <div>
         <Text style={{ ...styles.text, fontSize: 27 }}>{`$${parseFloat(
-          price
+          amount
         ).toFixed(2)}`}</Text>
       </div>
     </div>
