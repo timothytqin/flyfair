@@ -1,6 +1,7 @@
 import bg from "./assets/bg-web.png";
-import FlightList from "./components/FlightsList";
 
+import AddFlight from "./components/AddFlight";
+import FlightList from "./components/FlightsList";
 import FlightDetails from "./components/FlightDetails";
 import Header from "./components/Header";
 
@@ -36,7 +37,8 @@ function App() {
         <Header />
         <div style={{ display: "flex", flex: 1 }}>
           <FlightList />
-          <FlightDetails />
+          {/* <FlightDetails /> */}
+          <AddFlight />
         </div>
       </div>
     </div>
