@@ -4,6 +4,7 @@ import { Text, AppRegistry } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Login from './src/screens/login';
+import Stock from './src/screens/Stock';
 
 
 
@@ -15,11 +16,9 @@ function MyStack() {
     <Stack.Navigator>
       <Stack.Screen
         name="Login" 
-        component={Login} 
+        component={Stock} 
         options={{ headerShown: false}} 
       />
-  
-      
     </Stack.Navigator>
   );
 }
