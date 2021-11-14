@@ -13,7 +13,7 @@ import BottomSheet from 'reanimated-bottom-sheet';
 
 
 
-export default function Home() {
+export default function Bid() {
     const navigation = useNavigation();
     const [fontLoaded] = useFonts({
         B: require('../assets//b.ttf'),
@@ -41,15 +41,15 @@ export default function Home() {
                     </View></TouchableOpacity>
                     <TouchableOpacity onPress={()=>navigation.navigate('Bids')}><View>
                     <View style={{backgroundColor:theme.grey, opacity:0.75, borderRadius:50, height:50, width:50, alignSelf:'center'}}>
-                        <Icon name="search" type="font-awesome" color={theme.blue} style={{marginTop:'20%', alignSelf:'center'}}></Icon>
+                        <Icon name="gavel" type="font-awesome" color={theme.blue} style={{marginTop:'20%', alignSelf:'center'}}></Icon>
                     </View>
-                    <Text style={{fontFamily:'R', color:theme.blue, textAlign:'center'}}>Find Trip</Text>
+                    <Text style={{fontFamily:'R', color:theme.blue, textAlign:'center'}}>Bids</Text>
                     </View></TouchableOpacity>
                     <TouchableOpacity><View>
                     <View style={{backgroundColor:theme.grey, opacity:0.75, borderRadius:50, height:50, width:50, alignSelf:'center'}}>
-                        <Icon name="arrowright" type="antdesign" color={theme.blue} style={{marginTop:'20%', alignSelf:'center'}}></Icon>
+                        <Icon name="wallet" type="entypo" color={theme.blue} style={{marginTop:'20%', alignSelf:'center'}}></Icon>
                     </View>
-                    <Text style={{fontFamily:'R', color:theme.blue, textAlign:'center'}}>Book Flights</Text>
+                    <Text style={{fontFamily:'R', color:theme.blue, textAlign:'center'}}>Wallet</Text>
                     </View></TouchableOpacity>
                 </View>
     </View>
@@ -71,27 +71,27 @@ export default function Home() {
                 <View style={{backgroundColor:theme.black, opacity:0.7, width:'80%', alignSelf:'center', paddingVertical:'2.5%', paddingHorizontal:'5%', borderRadius:5, flexDirection:'row', justifyContent:'space-between',}}>
                     <View>
                     <Text style={{color:theme.white, fontFamily:'B', marginBottom:'2.5%', fontSize:17}}>John Doe</Text>
-                    <Text style={{color:theme.white, fontFamily:'R'}}>AAdvantage member</Text>
-                    <Text style={{color:theme.white, fontFamily:'R'}}>Available award miles: 20,000</Text>
+                    <Text style={{color:theme.white, fontFamily:'R'}}>AA Pilot</Text>
+                    <Text style={{color:theme.white, fontFamily:'R'}}>Miles flown: 20,000</Text>
                     </View>
                     <Icon name="chevron-right" type="entypo" style={{marginTop:'50%'}} color="white"></Icon>
                 </View>
                 <View style={{marginTop:'10%'}}></View>
                 <View style={{width:'80%', height:'52.25%', backgroundColor:theme.white, opacity:0.75, borderRadius:7, alignSelf:'center', paddingTop:'5%'}}>
-                    <Text  style={{fontFamily:'R', color:theme.blue, fontSize:24, marginLeft:'5%'}}>Ongoing Flight</Text>
+                    <Text  style={{fontFamily:'R', color:theme.blue, fontSize:24, marginLeft:'5%'}}>Place a bid</Text>
                     <View style={{flexDirection:'row', justifyContent:'center', marginTop:'5%'}}>
                         <Text style={{fontFamily:'R', color:theme.blue, fontSize:30, marginHorizontal:'5%'}}>DCA</Text>
                         <Icon name="arrowright" type="antdesign" color={theme.blue} size={30}></Icon>
                         <Text style={{fontFamily:'R', color:theme.blue, fontSize:30, marginLeft:'5%'}}>DFW</Text>
                     </View>
                     <View style={{marginTop:'5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
-                        <Text style={{fontFamily:'R', color:theme.blue}}>Passenger</Text>
-                        <Text style={{fontFamily:'R', color:theme.blue}}>Seats</Text>
+                        <Text style={{fontFamily:'R', color:theme.blue}}>Depart at</Text>
+                        <Text style={{fontFamily:'R', color:theme.blue}}>Arrive by</Text>
                     </View>
                     <View style={{borderBottomColor:theme.blue, borderBottomWidth:0.5, width:'80%', alignSelf:'center'}}></View>
                     <View style={{marginTop:'.5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
-                        <Text style={{fontFamily:'B', color:theme.blue}}>John Doe</Text>
-                        <Text style={{fontFamily:'B', color:theme.blue}}>1A</Text>
+                        <Text style={{fontFamily:'B', color:theme.blue}}>11:30 AM</Text>
+                        <Text style={{fontFamily:'B', color:theme.blue}}>1:00 PM</Text>
                     </View>
                     <View style={{borderBottomColor:theme.blue, borderBottomWidth:1, width:'80%', alignSelf:'center', marginTop:'5%'}}></View>
                     <View style={{marginTop:'.5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
@@ -105,7 +105,7 @@ export default function Home() {
 
 
                     <View style={{marginVertical:'5%', paddingHorizontal:'10%'}}>
-                        <Text style={{fontFamily:'B', color:theme.blue}}>Leave a Tip</Text>
+                        <Text style={{fontFamily:'B', color:theme.blue}}>Place your bid</Text>
                         <Text style={{fontFamily:'R', color:theme.blue}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt</Text>
                         <View style={{flexDirection:'row', marginTop:'10%'}}>
                             <Text  style={{borderBottomColor:theme.blue, borderBottomWidth:1, fontFamily:'R', fontSize:35, color:theme.blue}}>$</Text>
@@ -113,7 +113,7 @@ export default function Home() {
                         </View>
                     </View>
                     <TouchableOpacity><View style={{backgroundColor:theme.blue, padding:'4%', borderBottomEndRadius:7, borderBottomLeftRadius:7, marginTop:'11%', width:'100%'}}>
-                        <Text style={{fontFamily:'B', textAlign:'center', color:theme.white}}>Confirm</Text>
+                        <Text style={{fontFamily:'B', textAlign:'center', color:theme.white}}>Place bid</Text>
                     </View></TouchableOpacity>
                 </View>
 

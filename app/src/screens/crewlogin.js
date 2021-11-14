@@ -10,7 +10,7 @@ import { TextInput, TouchableOpacity } from 'react-native-gesture-handler';
 
 
 
-export default function Login() {
+export default function Crewlogin() {
     const navigation = useNavigation();
     const [fontLoaded] = useFonts({
         B: require('../assets//b.ttf'),
@@ -43,7 +43,7 @@ export default function Login() {
                         <Text style={{fontFamily:'R', color:theme.blue}}>Password</Text>
                         <TextInput style={{borderBottomColor:theme.blue, borderBottomWidth:1, fontFamily:'R', fontSize:15}}></TextInput>
                     </View>
-                    <TouchableOpacity onPress={()=>navigation.navigate('Home')}><View style={{backgroundColor:theme.blue, padding:'4%', borderBottomEndRadius:7, borderBottomLeftRadius:7, marginTop:'11%', width:'100%'}}>
+                    <TouchableOpacity onPress={()=>navigation.navigate('Crewhome')}><View style={{backgroundColor:theme.blue, padding:'4%', borderBottomEndRadius:7, borderBottomLeftRadius:7, marginTop:'11%', width:'100%'}}>
                         <Text style={{fontFamily:'B', textAlign:'center', color:theme.white}}>Login</Text>
                     </View></TouchableOpacity>
                 </View>
@@ -55,11 +55,11 @@ export default function Login() {
                     </View>
                     <Text style={{fontFamily:'R', color:theme.grey, textAlign:'center'}}>Join AAdvantage</Text>
                     </View></TouchableOpacity>
-                    <TouchableOpacity onPress={()=>navigation.navigate('Crewlogin')}><View>
+                    <TouchableOpacity><View>
                     <View style={{backgroundColor:theme.grey, opacity:0.75, borderRadius:50, height:50, width:50, alignSelf:'center'}}>
                         <Icon name="arrowright" type="antdesign" color={theme.blue} style={{marginTop:'20%', alignSelf:'center'}}></Icon>
                     </View>
-                    <Text style={{fontFamily:'R', color:theme.grey, textAlign:'center'}}>Continue as crew</Text>
+                    <Text style={{fontFamily:'R', color:theme.grey, textAlign:'center'}}>Continue as traveller</Text>
                     </View></TouchableOpacity>
                 </View>
 
