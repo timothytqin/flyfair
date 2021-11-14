@@ -22,6 +22,28 @@ export default function Insurance() {
         R: require('../assets/r.ttf')
 
       });
+
+      const _getInsurance = () => {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        
+        var raw = JSON.stringify({
+          "action": "getpremium",
+          "flightid": "3"
+        });
+        
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+        
+        fetch("https://us-central1-aiot-fit-xlab.cloudfunctions.net/flyfair", requestOptions)
+          .then(response => response.text())
+          .then(result => console.log(result))
+          .catch(error => console.log('error', error));
+      }
     const renderContent = () => (
     <View
         style={{

@@ -41,7 +41,7 @@ export default function Login() {
                     </View>
                     <View style={{marginVertical:'5%', paddingHorizontal:'10%'}}>
                         <Text style={{fontFamily:'R', color:theme.blue}}>Password</Text>
-                        <TextInput style={{borderBottomColor:theme.blue, borderBottomWidth:1, fontFamily:'R', fontSize:15}}></TextInput>
+                        <TextInput secureTextEntry style={{borderBottomColor:theme.blue, borderBottomWidth:1, fontFamily:'R', fontSize:15}}></TextInput>
                     </View>
                     <TouchableOpacity onPress={()=>navigation.navigate('Home')}><View style={{backgroundColor:theme.blue, padding:'4%', borderBottomEndRadius:7, borderBottomLeftRadius:7, marginTop:'11%', width:'100%'}}>
                         <Text style={{fontFamily:'B', textAlign:'center', color:theme.white}}>Login</Text>

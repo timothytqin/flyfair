@@ -98,12 +98,12 @@ export default function Wallet() {
         .catch(error => console.log('error', error));
     }
 
-    const [bidsData, setBidsData] = useState({'bids':[{'id':0,'amount':'300','fligt':'2230','txid':'324345342342342342','type':'tip'},
-    {'id':1,'amount':'300','fligt':'2230','txid':'324345342342342342','type':'tip'},
-    {'id':2,'amount':'300','fligt':'2230','txid':'324345342342342342','type':'tip'},
-    {'id':3,'amount':'300','fligt':'2230','txid':'324345342342342342','type':'tip'},
-    {'id':4,'amount':'300','fligt':'2230','txid':'324345342342342342','type':'tip'},
-    {'id':5,'amount':'300','fligt':'2230','txid':'324345342342342342','type':'tip'},]})
+    const [bidsData, setBidsData] = useState({'bids':[{'id':0,'amount':'25','fligt':'2230','txid':'TX10002','type':'tip'},
+    {'id':1,'amount':'30','fligt':'2212','txid':'TX10003','type':'tip'},
+    {'id':2,'amount':'300','fligt':'1102','txid':'TX10005','type':'bonus'},
+    {'id':3,'amount':'50','fligt':'7721','txid':'TX10007','type':'tip'},
+    {'id':4,'amount':'100','fligt':'1107','txid':'TX10010','type':'tip'},
+    {'id':5,'amount':'50','fligt':'2230','txid':'TX10023','type':'tip'},]})
     
     
 
