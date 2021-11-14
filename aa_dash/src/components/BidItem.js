@@ -25,7 +25,7 @@ export default function BidItem({ data }) {
   return (
     <div style={styles.container}>
       <div style={styles.index}>
-        <Text style={styles.text}>{`${index}.`}</Text>
+        <Text style={styles.text}>{`${index + 1}.`}</Text>
       </div>
       <div style={{ flex: 1 }}>
         <Text style={styles.text}>{` ${name}`}</Text>

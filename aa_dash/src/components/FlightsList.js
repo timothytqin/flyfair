@@ -14,9 +14,27 @@ export default function FlightList() {
       display: "flex",
       alignItems: "flex-end",
     },
+    body: {
+      height: "69vh",
+      overflowY: "scroll",
+    },
   };
 
   const flights = [
+    {
+      from: "AUS",
+      to: "JFK",
+      type: "Airbus 320",
+      price: "300",
+      time: 4,
+    },
+    {
+      from: "AUS",
+      to: "JFK",
+      type: "Airbus 320",
+      price: "300",
+      time: 4,
+    },
     {
       from: "AUS",
       to: "JFK",
@@ -33,9 +51,11 @@ export default function FlightList() {
         <Text fontSize={11}> | Completed Bids</Text>
       </div>
       <HorizontalBar />
-      {[...flights, ...flights, ...flights, ...flights].map((flight) => (
-        <FlightItem data={flight} />
-      ))}
+      <div style={styles.body}>
+        {[...flights, ...flights, ...flights, ...flights].map((flight) => (
+          <FlightItem data={flight} />
+        ))}
+      </div>
     </Panel>
   );
 }

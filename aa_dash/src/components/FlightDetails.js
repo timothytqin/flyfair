@@ -21,6 +21,8 @@ export default function FlightDetails({ data }) {
       display: "flex",
       flexDirection: "column",
       padding: "2em 4em",
+      height: "64vh",
+      overflowY: "scroll",
     },
     direction: {
       display: "flex",
@@ -104,7 +106,7 @@ export default function FlightDetails({ data }) {
             <Text style={styles.value}>Bid History</Text>
             <Text style={styles.label}>Pilot | Crew</Text>
           </div>
-          {[...bids, ...bids, ...bids].map((bid, index) => (
+          {[...bids, ...bids, ...bids, ...bids].map((bid, index) => (
             <BidItem data={{ ...bid, index }} />
           ))}
         </div>
