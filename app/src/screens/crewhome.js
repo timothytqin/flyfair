@@ -85,13 +85,13 @@ export default function Crewhome() {
                         <Text style={{fontFamily:'R', color:theme.blue, fontSize:30, marginLeft:'5%'}}>DFW</Text>
                     </View>
                     <View style={{marginTop:'5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
-                        <Text style={{fontFamily:'R', color:theme.blue}}>Passenger</Text>
-                        <Text style={{fontFamily:'R', color:theme.blue}}>Seats</Text>
+                        <Text style={{fontFamily:'R', color:theme.blue}}>Depart at</Text>
+                        <Text style={{fontFamily:'R', color:theme.blue}}>Arrive ay</Text>
                     </View>
                     <View style={{borderBottomColor:theme.blue, borderBottomWidth:0.5, width:'80%', alignSelf:'center'}}></View>
                     <View style={{marginTop:'.5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
-                        <Text style={{fontFamily:'B', color:theme.blue}}>John Doe</Text>
-                        <Text style={{fontFamily:'B', color:theme.blue}}>1A</Text>
+                        <Text style={{fontFamily:'B', color:theme.blue}}>11:20</Text>
+                        <Text style={{fontFamily:'B', color:theme.blue}}>13:40</Text>
                     </View>
                     <View style={{borderBottomColor:theme.blue, borderBottomWidth:1, width:'80%', alignSelf:'center', marginTop:'5%'}}></View>
                     <View style={{marginTop:'.5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
