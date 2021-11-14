@@ -13,7 +13,7 @@ import BottomSheet from 'reanimated-bottom-sheet';
 
 
 
-export default function Home() {
+export default function Ride() {
     const navigation = useNavigation();
     const [fontLoaded] = useFonts({
         B: require('../assets//b.ttf'),
@@ -33,7 +33,7 @@ export default function Home() {
 
 <TouchableOpacity onPress={() => sheetRef.current.snapTo(0)}><Icon name="chevron-up" type="entypo" color={theme.grey} size={30} style={{textAlign:'center', alignSelf:'center'}}></Icon></TouchableOpacity>
         <View style={{flexDirection:'row', paddingHorizontal:'10%', marginTop:'10%', justifyContent:'space-between'}}>
-                    <TouchableOpacity onPress={()=>navigation.navigate('Findride')}><View>
+                    <TouchableOpacity><View>
                     <View style={{backgroundColor:theme.grey, opacity:0.75, borderRadius:50, height:50, width:50, alignSelf:'center'}}>
                         <Icon name="car" type="font-awesome" color={theme.blue} style={{marginTop:'20%', alignSelf:'center'}}></Icon>
                     </View>
@@ -45,7 +45,7 @@ export default function Home() {
                     </View>
                     <Text style={{fontFamily:'R', color:theme.blue, textAlign:'center'}}>Find Trip</Text>
                     </View></TouchableOpacity>
-                    <TouchableOpacity onPress={()=>navigation.navigate('Insurance')}><View>
+                    <TouchableOpacity><View>
                     <View style={{backgroundColor:theme.grey, opacity:0.75, borderRadius:50, height:50, width:50, alignSelf:'center'}}>
                         <Icon name="arrowright" type="antdesign" color={theme.blue} style={{marginTop:'20%', alignSelf:'center'}}></Icon>
                     </View>
@@ -77,42 +77,50 @@ export default function Home() {
                     <Icon name="chevron-right" type="entypo" style={{marginTop:'50%'}} color="white"></Icon>
                 </View>
                 <View style={{marginTop:'10%'}}></View>
-                <View style={{width:'80%', height:'52.25%', backgroundColor:theme.white, opacity:0.75, borderRadius:7, alignSelf:'center', paddingTop:'5%'}}>
-                    <Text  style={{fontFamily:'R', color:theme.blue, fontSize:24, marginLeft:'5%'}}>Ongoing Flight</Text>
-                    <View style={{flexDirection:'row', justifyContent:'center', marginTop:'5%'}}>
-                        <Text style={{fontFamily:'R', color:theme.blue, fontSize:30, marginHorizontal:'5%'}}>DCA</Text>
-                        <Icon name="arrowright" type="antdesign" color={theme.blue} size={30}></Icon>
-                        <Text style={{fontFamily:'R', color:theme.blue, fontSize:30, marginLeft:'5%'}}>DFW</Text>
-                    </View>
+                <View style={{width:'80%', height:'55.25%', backgroundColor:theme.white, opacity:0.75, borderRadius:7, alignSelf:'center', paddingTop:'5%'}}>
+                    <Text  style={{fontFamily:'R', color:theme.blue, fontSize:24, marginLeft:'5%'}}>Book a ride</Text>
                     <View style={{marginTop:'5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
-                        <Text style={{fontFamily:'R', color:theme.blue}}>Passenger</Text>
-                        <Text style={{fontFamily:'R', color:theme.blue}}>Seats</Text>
+                        <Text style={{fontFamily:'R', color:theme.blue}}>Pickup</Text>
                     </View>
                     <View style={{borderBottomColor:theme.blue, borderBottomWidth:0.5, width:'80%', alignSelf:'center'}}></View>
                     <View style={{marginTop:'.5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
-                        <Text style={{fontFamily:'B', color:theme.blue}}>John Doe</Text>
-                        <Text style={{fontFamily:'B', color:theme.blue}}>1A</Text>
+                        <Text style={{fontFamily:'B', color:theme.blue}}>Dallas Fort-Worth, Dallas, TX</Text>
+                    </View>
+                    <View style={{marginTop:'5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
+                        <Text style={{fontFamily:'R', color:theme.blue}}>Drop-off</Text>
+                    </View>
+                    <View style={{borderBottomColor:theme.blue, borderBottomWidth:0.5, width:'80%', alignSelf:'center'}}></View>
+                    <View style={{marginTop:'.5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
+                        <Text style={{fontFamily:'B', color:theme.blue}}>Hilton Garden Inn, Frisco, TX</Text>
+                    </View>
+                    <View style={{marginTop:'5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
+                        <Text style={{fontFamily:'R', color:theme.blue}}>Depart at</Text>
+                        <Text style={{fontFamily:'R', color:theme.blue}}>Arrive by</Text>
+                    </View>
+                    <View style={{borderBottomColor:theme.blue, borderBottomWidth:0.5, width:'80%', alignSelf:'center'}}></View>
+                    <View style={{marginTop:'.5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
+                        <Text style={{fontFamily:'B', color:theme.blue}}>11:30 AM</Text>
+                        <Text style={{fontFamily:'B', color:theme.blue}}>1:00 PM</Text>
                     </View>
                     <View style={{borderBottomColor:theme.blue, borderBottomWidth:1, width:'80%', alignSelf:'center', marginTop:'5%'}}></View>
                     <View style={{marginTop:'.5%', paddingHorizontal:'10%', flexDirection:'row', justifyContent:'space-between'}}>
                         <View style={{flexDirection:'column'}}>
-                        <Text style={{fontFamily:'R', color:theme.blue}}>Aircraft</Text>
-                        <Text style={{fontFamily:'B', color:theme.blue}}>Boeing 737-800</Text>
+                        <Text style={{fontFamily:'R', color:theme.blue}}>Vehicle</Text>
+                        <Text style={{fontFamily:'B', color:theme.blue}}>GMC Yukon XL</Text>
                         </View>
-                        <Icon name="wifi" color={theme.blue}></Icon>
+                        <Icon name="wheelchair" type="fontisto" color={theme.blue}></Icon>
                     </View>
 
 
 
                     <View style={{marginVertical:'5%', paddingHorizontal:'10%'}}>
-                        <Text style={{fontFamily:'B', color:theme.blue}}>Leave a Tip</Text>
-                        <Text style={{fontFamily:'R', color:theme.blue}}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tincidunt</Text>
+                        <Text style={{fontFamily:'B', color:theme.blue}}>Estimated cost</Text>
+                        <Text style={{fontFamily:'R', color:theme.blue}}>The total cost of the rideshare will be split among all the passengers depending on their destination</Text>
                         <View style={{flexDirection:'row', marginTop:'10%'}}>
-                            <Text  style={{borderBottomColor:theme.blue, borderBottomWidth:1, fontFamily:'R', fontSize:35, color:theme.blue}}>$</Text>
-                            <TextInput style={{borderBottomColor:theme.blue, borderBottomWidth:1, fontFamily:'R', fontSize:35}} placeholder="0.00"></TextInput>
+                            <Text  style={{borderBottomColor:theme.blue, borderBottomWidth:1, fontFamily:'R', fontSize:35, color:theme.blue}}>$9.00</Text>
                         </View>
                     </View>
-                    <TouchableOpacity><View style={{backgroundColor:theme.blue, padding:'4%', borderBottomEndRadius:7, borderBottomLeftRadius:7, marginTop:'11%', width:'100%'}}>
+                    <TouchableOpacity><View style={{backgroundColor:theme.blue, padding:'4%', borderBottomEndRadius:7, borderBottomLeftRadius:7, marginTop:'1%', width:'100%'}}>
                         <Text style={{fontFamily:'B', textAlign:'center', color:theme.white}}>Confirm</Text>
                     </View></TouchableOpacity>
                 </View>

@@ -11,6 +11,10 @@ import Crewlogin from './src/screens/crewlogin';
 import Crewhome from './src/screens/crewhome';
 import Bid from './src/screens/bid';
 import Wallet from './src/screens/wallet';
+import Findride from './src/screens/findride';
+import Rides from './src/screens/rides';
+import Ride from './src/screens/ride';
+import Insurance from './src/screens/insurance';
 
 
 
@@ -53,6 +57,26 @@ function MyStack() {
       <Stack.Screen
         name="Wallet" 
         component={Wallet} 
+        options={{ headerShown: false}} 
+      />
+      <Stack.Screen
+        name="Findride" 
+        component={Findride} 
+        options={{ headerShown: false}} 
+      />
+      <Stack.Screen
+        name="Rides" 
+        component={Rides} 
+        options={{ headerShown: false}} 
+      />
+      <Stack.Screen
+        name="Ride" 
+        component={Ride} 
+        options={{ headerShown: false}} 
+      />
+      <Stack.Screen
+        name="Insurance" 
+        component={Insurance} 
         options={{ headerShown: false}} 
       />
       
